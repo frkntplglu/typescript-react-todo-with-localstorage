@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 
 interface ITodoItemProps{
     id: number,
@@ -8,8 +8,8 @@ interface ITodoItemProps{
     deleteTask: (id: number) => void;
 }
 
-function TodoItem(props: ITodoItemProps) {
-    const {id, title, isDone, doneTask, deleteTask} = props;
+const  TodoItem: FC<ITodoItemProps> = (props) => {
+    const {id, title, isDone, doneTask, deleteTask,} = props;
     return (
         <li>
             {title} - [{isDone ? "DONE" : "PENDING"}] 
